@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 
-import { siteConfig } from "@/config/site";
-
 import Figma from "../../logos/figma";
 import React from "../../logos/react";
 import ShadcnUi from "../../logos/shadcn-ui";
@@ -20,11 +18,6 @@ interface LogosProps {
 
 export default function Logos({
   title = "Built with industry-standard tools and best practices",
-  badge = (
-    <Badge variant="outline" className="border-brand/30 text-brand">
-      Last updated: {siteConfig.stats.updated}
-    </Badge>
-  ),
   logos = [
     <Logo key="figma" image={Figma} name="Figma" />,
     <Logo key="react" image={React} name="React" version="19.2.1" />,
@@ -49,7 +42,6 @@ export default function Logos({
     <Section className={className}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-8 text-center">
         <div className="flex flex-col items-center gap-6">
-          {badge !== false && badge}
           <h2 className="text-md font-semibold sm:text-2xl">{title}</h2>
         </div>
         {logos !== false && logos.length > 0 && (

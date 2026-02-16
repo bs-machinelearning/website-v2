@@ -1,65 +1,41 @@
-import { type VariantProps } from "class-variance-authority";
-import { ReactNode } from "react";
-
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import { Button, buttonVariants } from "../../ui/button";
+import { Button } from "../../ui/button";
 import Glow from "../../ui/glow";
 import { Section } from "../../ui/section";
 
-interface CTAButtonProps {
-  href: string;
-  text: string;
-  variant?: VariantProps<typeof buttonVariants>["variant"];
-  icon?: ReactNode;
-  iconRight?: ReactNode;
-}
-
 interface CTAProps {
   title?: string;
-  buttons?: CTAButtonProps[] | false;
   className?: string;
 }
 
 export default function CTA({
-  title = "Start building",
-  buttons = [
-    {
-      href: siteConfig.getStartedUrl,
-      text: "Get Started",
-      variant: "default",
-    },
-  ],
+  title = "Ready to Get Started?",
   className,
 }: CTAProps) {
   return (
-    <Section className={cn("group relative overflow-hidden", className)}>
-      <div className="max-w-container relative z-10 mx-auto flex flex-col items-center gap-6 text-center sm:gap-8">
-        <h2 className="max-w-[640px] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
-          {title}
-        </h2>
-        {buttons !== false && buttons.length > 0 && (
-          <div className="flex justify-center gap-4">
-            {buttons.map((button, index) => (
-              <Button
-                key={index}
-                variant={button.variant || "default"}
-                size="lg"
-                asChild
-              >
-                <a href={button.href}>
-                  {button.icon}
-                  {button.text}
-                  {button.iconRight}
-                </a>
-              </Button>
-            ))}
-          </div>
-        )}
-      </div>
-      <div className="absolute top-0 left-0 h-full w-full translate-y-[1rem] opacity-80 transition-all duration-500 ease-in-out group-hover:translate-y-[-2rem] group-hover:opacity-100">
-        <Glow variant="bottom" />
+    <Section className={cn("relative overflow-hidden py-24", className)}>
+      <Glow variant="bottom" />
+      <div className="relative z-10 container mx-auto max-w-7xl px-4 md:px-6">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="from-foreground to-foreground/60 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold tracking-tight text-transparent lg:text-5xl">
+            {title}
+          </h2>
+          <p className="text-muted-foreground mb-12 text-lg">
+            Whether you want to build ML projects or hire top talent — BSML has
+            you covered.
+          </p>
+        </div>
+
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
+          <Button size="lg" asChild>
+            <a href={siteConfig.getStartedUrl}>Apply as a Student</a>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <a href={siteConfig.links.linkedin}>Partner With Us</a>
+          </Button>
+        </div>
       </div>
     </Section>
   );

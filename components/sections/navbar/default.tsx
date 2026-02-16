@@ -45,9 +45,9 @@ export default function Navbar({
   name = "BSML",
   homeUrl = siteConfig.url,
   mobileLinks = [
-    { text: "Case Studies", href: "#" },
-    { text: "Research", href: "#" },
-    { text: "Insights", href: "#" },
+    { text: "Case Studies", href: "/case-studies" },
+    { text: "Research", href: "/research" },
+    { text: "Insights", href: "/insights" },
   ],
   actions = [
     {

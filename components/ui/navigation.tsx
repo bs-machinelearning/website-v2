@@ -50,17 +50,17 @@ export default function Navigation({
     {
       title: "Case Studies",
       isLink: true,
-      href: "#",
+      href: "/case-studies",
     },
     {
       title: "Research",
       isLink: true,
-      href: "#",
+      href: "/research",
     },
     {
       title: "Insights",
       isLink: true,
-      href: "#",
+      href: "/insights",
     },
   ],
   components = [

@@ -57,14 +57,13 @@ export default function Hero({
   buttons = [
     {
       href: siteConfig.getStartedUrl,
-      text: "Get Involved",
+      text: "Apply as a Student",
       variant: "default",
     },
     {
-      href: siteConfig.links.github,
-      text: "GitHub",
-      variant: "glow",
-      icon: <Github className="mr-2 size-4" />,
+      href: siteConfig.links.linkedin,
+      text: "Partner With Us",
+      variant: "outline",
     },
   ],
   className,
@@ -76,7 +75,7 @@ export default function Hero({
         className,
       )}
     >
-      <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24">
+      <div className="max-w-container mx-auto flex flex-col gap-12 pt-8 sm:gap-24">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
           {badge !== false && badge}
           <h1 className="animate-appear from-foreground to-foreground dark:to-muted-foreground relative z-10 inline-block bg-linear-to-r bg-clip-text text-4xl leading-tight font-semibold text-balance text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight">
