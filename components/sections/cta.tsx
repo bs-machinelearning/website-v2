@@ -1,9 +1,9 @@
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import { Button } from "../../ui/button";
-import Glow from "../../ui/glow";
-import { Section } from "../../ui/section";
+import { Button } from "../ui/button";
+import Glow from "../ui/glow";
+import { Section } from "../ui/section";
 
 interface CTAProps {
   title?: string;

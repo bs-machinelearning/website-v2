@@ -3,6 +3,9 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 
 import { ThemeProvider } from "@/components/contexts/theme-provider";
+import Navbar from "@/components/sections/navbar";
+import Footer from "@/components/sections/footer";
+import { LayoutLines } from "../components/ui/layout-lines";
 import { inter } from "@/lib/fonts";
 
 import { siteConfig } from "../config/site";
@@ -58,7 +61,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BSML | Bocconi Students for Machine Learning",
-    description: "Connecting minds, not only layers. Bocconi’s first Machine Learning project-incubator: publish projects, grow skills, and collaborate.",
+    description:
+      "Connecting minds, not only layers. Bocconi’s first Machine Learning project-incubator: publish projects, grow skills, and collaborate.",
     images: [siteConfig.ogImage],
     creator: "@bs-machinelearning",
   },
@@ -76,7 +80,12 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ colorScheme: "dark" }} className="dark">
       <body className={`${inter.className} bg-background antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <LayoutLines />
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

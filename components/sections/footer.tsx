@@ -3,14 +3,14 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import BSML from "../../logos/bsml";
+import BSML from "../logos/bsml";
 import {
   Footer,
   FooterBottom,
   FooterColumn,
   FooterContent,
-} from "../../ui/footer";
-import { ModeToggle } from "../../ui/mode-toggle";
+} from "../ui/footer";
+import { ModeToggle } from "../ui/mode-toggle";
 
 interface FooterLink {
   text: string;
@@ -70,8 +70,9 @@ export default function FooterSection({
   className,
 }: FooterProps) {
   return (
-    <footer className={cn("bg-background w-full px-4", className)}>
-      <div className="max-w-container mx-auto">
+    <footer className={cn("bg-background relative w-full px-4", className)}>
+      <div className="bg-primary/20 pointer-events-none absolute bottom-0 left-1/2 h-[200px] w-[500px] -translate-x-1/2 rounded-full blur-[100px] dark:bg-purple-500/20" />
+      <div className="max-w-container relative mx-auto">
         <Footer>
           <FooterContent>
             <FooterColumn className="col-span-2 sm:col-span-3 md:col-span-1">

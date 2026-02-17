@@ -5,13 +5,13 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import Github from "../../logos/github";
-import { Badge } from "../../ui/badge";
-import { Button, buttonVariants } from "../../ui/button";
-import Glow from "../../ui/glow";
-import { Mockup, MockupFrame } from "../../ui/mockup";
-import Screenshot from "../../ui/screenshot";
-import { Section } from "../../ui/section";
+import Github from "../logos/github";
+import { Badge } from "../ui/badge";
+import { Button, buttonVariants } from "../ui/button";
+import Glow from "../ui/glow";
+import { Mockup, MockupFrame } from "../ui/mockup";
+import Screenshot from "../ui/screenshot";
+import { Section } from "../ui/section";
 
 interface HeroButtonProps {
   href: string;

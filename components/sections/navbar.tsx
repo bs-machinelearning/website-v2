@@ -5,15 +5,15 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import BSML from "../../logos/bsml";
-import { Button, buttonVariants } from "../../ui/button";
+import BSML from "../logos/bsml";
+import { Button, buttonVariants } from "../ui/button";
 import {
   Navbar as NavbarComponent,
   NavbarLeft,
   NavbarRight,
-} from "../../ui/navbar";
-import Navigation from "../../ui/navigation";
-import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
+} from "../ui/navbar";
+import Navigation from "../ui/navigation";
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 
 interface NavbarLink {
   text: string;

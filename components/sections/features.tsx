@@ -85,9 +85,9 @@ const Feature166 = ({
           ))}
         </div>
         <div className="flex justify-center">
-          <div className="bg-card/50 relative flex w-full max-w-7xl flex-col rounded-2xl border">
+          <div className="bg-card/50 border-border dark:hover:border-primary/50 relative flex w-full max-w-7xl flex-col rounded-2xl border transition-all duration-300 dark:border-gray-800 dark:hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]">
             <div className="relative flex flex-col lg:flex-row">
-              <div className="border-border flex flex-col justify-between border-b p-8 lg:w-3/5 lg:border-r lg:border-b-0">
+              <div className="border-border flex flex-col justify-between border-b p-8 lg:w-3/5 lg:border-r lg:border-b-0 dark:border-gray-800">
                 <div>
                   <h2 className="text-xl font-semibold">{feature1.title}</h2>
                   <p className="text-muted-foreground mt-2">
@@ -114,8 +114,8 @@ const Feature166 = ({
                 />
               </div>
             </div>
-            <div className="border-border relative flex flex-col border-t lg:flex-row">
-              <div className="border-border flex flex-col justify-between border-b p-8 lg:w-2/5 lg:border-r lg:border-b-0">
+            <div className="border-border relative flex flex-col border-t lg:flex-row dark:border-gray-800">
+              <div className="border-border flex flex-col justify-between border-b p-8 lg:w-2/5 lg:border-r lg:border-b-0 dark:border-gray-800">
                 <div>
                   <h2 className="text-xl font-semibold">{feature3.title}</h2>
                   <p className="text-muted-foreground mt-2">
