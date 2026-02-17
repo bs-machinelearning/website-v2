@@ -1,5 +1,5 @@
 {
-  description = "BSML Jekyll site";
+  description = "BSML Nodejs dev-shell";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
