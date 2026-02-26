@@ -39,25 +39,25 @@ export default function FooterSection({
     {
       title: "Organization",
       links: [
-        { text: "About Us", href: "#" },
-        { text: "Our Team", href: "#" },
-        { text: "Contact", href: "#" },
+        { text: "About Us", href: "/about" },
+        { text: "Team", href: "/about#team" },
+        { text: "Contact", href: "/about#contact" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { text: "Case Studies", href: "#" },
-        { text: "Research Papers", href: "#" },
-        { text: "Insights", href: "#" },
+        { text: "Case Studies", href: "/case-studies" },
+        { text: "Research", href: "/research" },
+        { text: "Insights", href: "/insights" },
       ],
     },
     {
       title: "Social",
       links: [
-        { text: "LinkedIn", href: "#" },
-        { text: "Instagram", href: "#" },
-        { text: "GitHub", href: "#" },
+        { text: "LinkedIn", href: "https://linkedin.com" },
+        { text: "Instagram", href: "https://instagram.com" },
+        { text: "GitHub", href: "https://github.com" },
       ],
     },
   ],
