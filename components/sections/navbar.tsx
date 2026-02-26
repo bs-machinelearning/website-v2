@@ -45,14 +45,19 @@ export default function Navbar({
   name = "BSML",
   homeUrl = siteConfig.url,
   mobileLinks = [
+    { text: "About", href: "/about" },
     { text: "Case Studies", href: "/case-studies" },
     { text: "Research", href: "/research" },
     { text: "Insights", href: "/insights" },
+    { text: "Contact", href: "/contact" },
+    { text: "LinkedIn", href: "https://linkedin.com" },
+    { text: "Instagram", href: "https://instagram.com" },
+    { text: "GitHub", href: "https://github.com" },
   ],
   actions = [
     {
       text: "Partner with Us",
-      href: "#",
+      href: "/contact",
       isButton: true,
       variant: "default",
     },
@@ -64,7 +69,7 @@ export default function Navbar({
   return (
     <header className={cn("sticky top-0 z-50 -mb-4 px-4 pb-4", className)}>
       <div className="fade-bottom bg-background/15 absolute left-0 h-24 w-full backdrop-blur-lg"></div>
-      <div className="max-w-container relative mx-auto">
+      <div className="relative mx-auto max-w-7xl">
         <NavbarComponent>
           <NavbarLeft>
             <a
