@@ -29,10 +29,10 @@ export default function CTA({
         </div>
 
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <Button size="lg" asChild>
+          <Button size="lg" variant="outline" asChild>
             <a href={siteConfig.getStartedUrl}>Apply as a Student</a>
           </Button>
-          <Button size="lg" variant="outline" asChild>
+          <Button size="lg" asChild>
             <a href={siteConfig.links.linkedin}>Partner With Us</a>
           </Button>
         </div>

@@ -58,12 +58,12 @@ export default function Hero({
     {
       href: siteConfig.getStartedUrl,
       text: "Apply as a Student",
-      variant: "default",
+      variant: "outline",
     },
     {
       href: siteConfig.links.linkedin,
       text: "Partner With Us",
-      variant: "outline",
+      variant: "default",
     },
   ],
   className,
