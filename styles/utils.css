@@ -60,22 +60,22 @@
 }
 
 @utility line-y {
-  @apply border-border dark:border-border/10;
+  @apply border-border dark:border-[#6600cc]/30;
   border-width: 0 var(--line-width, 0);
 }
 
 @utility line-x {
-  @apply border-border dark:border-border/10;
+  @apply border-border dark:border-[#6600cc]/30;
   border-width: var(--line-width, 0) 0;
 }
 
 @utility line-b {
-  @apply border-border dark:border-border/10;
+  @apply border-border dark:border-[#6600cc]/30;
   border-width: 0 0 var(--line-width, 0);
 }
 
 @utility line-t {
-  @apply border-border dark:border-border/10;
+  @apply border-border dark:border-[#6600cc]/30;
   border-width: var(--line-width, 0) 0;
 }
 
