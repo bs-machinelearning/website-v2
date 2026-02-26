@@ -30,7 +30,7 @@ const BlogGrid = ({ posts }: { posts: BlogPost[] }) => {
       {posts.map((post, index) => (
         <Card
           key={index}
-          className="group dark:group-hover:border-primary/50 h-full overflow-hidden border border-transparent shadow-none transition-all duration-300 dark:border-gray-800 dark:group-hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+          className="group hover:border-primary/60 hover:bg-primary/10 dark:hover:border-primary/60 dark:hover:bg-primary/10 h-full overflow-hidden border border-gray-200 bg-transparent shadow-none transition-all duration-300 hover:shadow-[0_0_30px_rgba(102,0,204,0.15)] dark:border-gray-800 dark:hover:shadow-[0_0_30px_rgba(102,0,204,0.2)]"
         >
           <CardContent className="space-y-3.5 p-6">
             <div className="mb-6 overflow-hidden rounded-lg sm:mb-12">
@@ -66,7 +66,7 @@ const BlogGrid = ({ posts }: { posts: BlogPost[] }) => {
               <Button
                 size="icon"
                 variant="outline"
-                className="group-hover:bg-primary! group-hover:text-primary-foreground group-hover:border-primary hover:border-primary hover:bg-primary! hover:text-primary-foreground"
+                className="group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground dark:group-hover:border-white dark:group-hover:bg-white dark:group-hover:text-black dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
                 asChild
               >
                 <a href={post.blogLink}>

@@ -48,19 +48,112 @@ interface NavigationProps {
 export default function Navigation({
   menuItems = [
     {
-      title: "Case Studies",
-      isLink: true,
-      href: "/case-studies",
+      title: "Organisation",
+      content: (
+        <div className="w-[400px] p-4 md:w-[600px]">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="border-border/30 border-r pr-6">
+              <Link href="/" className="flex items-center gap-2">
+                <BSML />
+                <span className="font-bold">BSML</span>
+              </Link>
+              <p className="text-muted-foreground mt-2 text-sm">
+                We are Bocconi Students for Machine Learning — connecting minds,
+                not just layers. Our mission is to create a community where
+                students can learn, collaborate, and publish ML projects.
+              </p>
+            </div>
+            <div className="pl-2">
+              <ul className="grid gap-1">
+                <ListItem href="/about" title="About Us">
+                  Learn about our mission and team
+                </ListItem>
+                <ListItem href="/contact" title="Contact">
+                  Get in touch with us
+                </ListItem>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      title: "Research",
-      isLink: true,
-      href: "/research",
+      title: "Resources",
+      content: (
+        <div className="w-[400px] p-4 md:w-[600px]">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="border-border/30 border-r pr-6">
+              <Link href="/" className="flex items-center gap-2">
+                <BSML />
+                <span className="font-bold">BSML</span>
+              </Link>
+              <p className="text-muted-foreground mt-2 text-sm">
+                Explore our research papers, case studies, and insights. We
+                publish our work to share knowledge and contribute to the ML
+                community.
+              </p>
+            </div>
+            <div className="pl-2">
+              <ul className="grid gap-1">
+                <ListItem href="/case-studies" title="Case Studies">
+                  See our real-world impact
+                </ListItem>
+                <ListItem href="/research" title="Research">
+                  Explore our research papers
+                </ListItem>
+                <ListItem href="/insights" title="Insights">
+                  Read our latest articles
+                </ListItem>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      title: "Insights",
-      isLink: true,
-      href: "/insights",
+      title: "Social",
+      content: (
+        <div className="w-[400px] p-4 md:w-[600px]">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="border-border/30 border-r pr-6">
+              <Link href="/" className="flex items-center gap-2">
+                <BSML />
+                <span className="font-bold">BSML</span>
+              </Link>
+              <p className="text-muted-foreground mt-2 text-sm">
+                Join our growing community of ML enthusiasts. Follow us on
+                social media to stay updated with our latest projects, events,
+                and opportunities.
+              </p>
+            </div>
+            <div className="pl-2">
+              <ul className="grid gap-1">
+                <ListItem
+                  href="https://linkedin.com"
+                  title="LinkedIn"
+                  rel="noopener noreferrer"
+                >
+                  Follow us on LinkedIn
+                </ListItem>
+                <ListItem
+                  href="https://instagram.com"
+                  title="Instagram"
+                  rel="noopener noreferrer"
+                >
+                  Follow us on Instagram
+                </ListItem>
+                <ListItem
+                  href="https://github.com"
+                  title="GitHub"
+                  rel="noopener noreferrer"
+                >
+                  Check our GitHub
+                </ListItem>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
     },
   ],
   components = [
@@ -137,48 +230,10 @@ export default function Navigation({
               </NavigationMenuLink>
             ) : (
               <>
-                <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  {item.content === "default" ? (
-                    <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <a
-                            className="from-muted/30 to-muted/10 flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
-                            href={logoHref}
-                          >
-                            {logo}
-                            <div className="mt-4 mb-2 text-lg font-medium">
-                              {logoTitle}
-                            </div>
-                            <p className="text-muted-foreground text-sm leading-tight">
-                              {logoDescription}
-                            </p>
-                          </a>
-                        </NavigationMenuLink>
-                      </li>
-                      {introItems.map((intro, i) => (
-                        <ListItem key={i} href={intro.href} title={intro.title}>
-                          {intro.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  ) : item.content === "components" ? (
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {components.map((component) => (
-                        <ListItem
-                          key={component.title}
-                          title={component.title}
-                          href={component.href}
-                        >
-                          {component.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  ) : (
-                    item.content
-                  )}
-                </NavigationMenuContent>
+                <NavigationMenuTrigger className="hover:text-primary data-[state=open]:text-primary text-sm font-medium">
+                  {item.title}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>{item.content}</NavigationMenuContent>
               </>
             )}
           </NavigationMenuItem>
@@ -200,7 +255,7 @@ function ListItem({
         <a
           data-slot="list-item"
           className={cn(
-            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none",
+            "hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none",
             className,
           )}
           {...props}
