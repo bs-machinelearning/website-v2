@@ -152,7 +152,12 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <Team teamMembers={leadership} />
+      <section className="border-border bg-muted/20 border-t px-6 py-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-8 text-center text-2xl font-bold">Our Team</h2>
+          <Team teamMembers={leadership} />
+        </div>
+      </section>
 
       {/* CTA */}
       <section
