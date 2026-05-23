@@ -1,8 +1,11 @@
-import Team from "@/components/sections/team";
+import {
+  GraduationCap,
+  Lightbulb,
+  Target,
+} from "lucide-react";
 
+import Team from "@/components/sections/team";
 import { Button } from "@/components/ui/button";
-import Glow from "@/components/ui/glow";
-import { siteConfig } from "@/config/site";
 
 const leadership = [
   {
@@ -43,26 +46,22 @@ const leadership = [
   },
 ];
 
-const values = [
+const highlights = [
   {
-    title: "Innovation",
-    description:
-      "We foster creative thinking and push boundaries in machine learning applications.",
+    icon: GraduationCap,
+    title: "Learn",
+    description: "Workshops and hands-on projects to master ML fundamentals.",
   },
   {
-    title: "Collaboration",
+    icon: Lightbulb,
+    title: "Build",
     description:
-      "We believe in the power of working together to achieve greater results.",
+      "Collaborate on real-world ML projects with industry applications.",
   },
   {
-    title: "Excellence",
-    description:
-      "We strive for the highest quality in all our projects and initiatives.",
-  },
-  {
-    title: "Integrity",
-    description:
-      "We conduct our work with honesty, transparency, and ethical standards.",
+    icon: Target,
+    title: "Publish",
+    description: "Share your research and contributions with the community.",
   },
 ];
 
@@ -70,83 +69,51 @@ export default function AboutPage() {
   return (
     <div className="bg-background text-foreground min-h-screen">
       {/* Hero */}
-      <section className="border-b border-gray-200 px-6 py-24 md:py-32 dark:border-gray-800">
-        <div className="mx-auto max-w-3xl">
-          <h1 className="mb-4 text-4xl font-semibold tracking-tight md:text-5xl dark:text-white">
+      <section className="border-border border-b px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="mb-3 text-4xl font-semibold tracking-tight md:text-5xl">
             About BSML
           </h1>
           <p className="text-muted-foreground text-lg">
-            Bocconi Students for Machine Learning — connecting minds, not just
-            layers.
+            Connecting minds, not just layers.
           </p>
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="border-t border-gray-200 px-6 py-24 dark:border-gray-800">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl dark:text-white">
-            Our Mission
-          </h2>
-          <p className="text-muted-foreground text-xl leading-relaxed">
-            To create a community where Bocconi students can learn, collaborate,
-            and publish machine learning projects. We bridge the gap between
-            academic theory and real-world applications in finance and
-            technology.
-          </p>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-muted/30 border-t border-gray-200 px-6 py-24 dark:border-gray-800">
-        <div className="mx-auto max-w-4xl">
-          <div className="grid grid-cols-2 gap-12 md:grid-cols-4">
-            <div className="text-center">
-              <div className="text-5xl font-bold dark:text-white">50+</div>
-              <div className="text-muted-foreground mt-2 text-lg">
-                Active Members
+      {/* What We Do */}
+      <section className="border-border bg-muted/20 border-t px-6 py-12">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid gap-6 md:grid-cols-3">
+            {highlights.map((item, index) => (
+              <div
+                key={index}
+                className="border-border bg-card rounded-xl border p-6"
+              >
+                <item.icon className="text-primary mb-3 size-6" />
+                <h3 className="mb-2 font-semibold">{item.title}</h3>
+                <p className="text-muted-foreground text-sm">
+                  {item.description}
+                </p>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold dark:text-white">20+</div>
-              <div className="text-muted-foreground mt-2 text-lg">
-                Events Hosted
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold dark:text-white">15+</div>
-              <div className="text-muted-foreground mt-2 text-lg">
-                Partner Companies
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold dark:text-white">1000+</div>
-              <div className="text-muted-foreground mt-2 text-lg">
-                Campus Reach
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="border-t border-gray-200 px-6 py-24 dark:border-gray-800">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl dark:text-white">
-            Our Values
-          </h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="rounded-xl border border-gray-200 p-8 dark:border-gray-800"
-              >
-                <h3 className="mb-3 text-xl font-semibold dark:text-white">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground">{value.description}</p>
-              </div>
-            ))}
+      {/* Stats */}
+      <section className="border-border border-t px-6 py-12">
+        <div className="mx-auto flex max-w-3xl justify-center gap-8 md:gap-16">
+          <div className="text-center">
+            <div className="text-primary text-3xl font-bold">50+</div>
+            <div className="text-muted-foreground text-sm">Members</div>
+          </div>
+          <div className="text-center">
+            <div className="text-primary text-3xl font-bold">20+</div>
+            <div className="text-muted-foreground text-sm">Events</div>
+          </div>
+          <div className="text-center">
+            <div className="text-primary text-3xl font-bold">15+</div>
+            <div className="text-muted-foreground text-sm">Partners</div>
           </div>
         </div>
       </section>
@@ -160,18 +127,10 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section
-        id="contact"
-        className="relative overflow-hidden border-t border-gray-200 px-6 py-24 dark:border-gray-800"
-      >
-        <Glow variant="bottom" />
-        <div className="relative z-10 mx-auto max-w-3xl text-center">
-          <h2 className="from-foreground to-foreground/60 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold tracking-tight text-transparent lg:text-4xl dark:text-white">
+      <section className="border-border border-t px-6 py-12">
+        <div className="mx-auto text-center">
+          <p className="text-muted-foreground mb-4">
             Interested in partnering with us?
-          </h2>
-          <p className="text-muted-foreground mb-12 text-lg">
-            We are always looking for sponsorship opportunities and industry
-            connections.
           </p>
           <Button size="lg" asChild>
             <a href="/contact">Partner With Us</a>
